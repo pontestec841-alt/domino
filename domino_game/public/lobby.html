@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominó Multiplayer - Lobby</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <h1>Dominó Multiplayer</h1>
+        <div class="user-info">
+            <span>Bem-vindo, <strong id="username-display">Jogador</strong>!</span>
+            <button class="btn btn-danger" onclick="logout()">Sair</button>
+        </div>
+    </header>
+
+    <main class="lobby-container">
+        <section class="create-room">
+            <h2>Criar Nova Sala</h2>
+            <form id="create-room-form">
+                <div class="form-group">
+                    <label for="room-name">Nome da Sala:</label>
+                    <input type="text" id="room-name" required placeholder="Ex: Sala dos Campeões">
+                </div>
+                <div class="form-group">
+                    <label for="max-players">Número de Jogadores:</label>
+                    <select id="max-players" required>
+                        <option value="2">2 Jogadores</option>
+                        <option value="3">3 Jogadores</option>
+                        <option value="4">4 Jogadores</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Criar Sala</button>
+            </form>
+        </section>
+
+        <section class="room-list">
+            <h2>Salas Disponíveis</h2>
+            <div class="rooms-grid" id="rooms-container">
+                <!-- Exemplo de sala gerada dinamicamente -->
+                <div class="room-card">
+                    <h3>Mesa de Quinta</h3>
+                    <p>Jogadores: 1/4</p>
+                    <p class="status waiting">Aguardando...</p>
+                    <a href="game.html?room=1" class="btn btn-success">Entrar</a>
+                </div>
+                <div class="room-card">
+                    <h3>Torneio</h3>
+                    <p>Jogadores: 2/2</p>
+                    <p class="status playing">Em Jogo</p>
+                    <button class="btn btn-disabled" disabled>Cheia</button>
+                </div>
+                <div class="room-card">
+                    <h3>Iniciantes</h3>
+                    <p>Jogadores: 3/4</p>
+                    <p class="status waiting">Aguardando...</p>
+                    <a href="game.html?room=3" class="btn btn-success">Entrar</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/lobby.js"></script>
+</body>
+</html>

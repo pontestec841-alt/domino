@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominó Multiplayer - Mesa</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-wrapper">
+        <header class="game-header">
+            <h2>Mesa: <span id="room-name-display">Carregando...</span></h2>
+            <button class="btn btn-secondary" onclick="window.location.href='lobby.html'">Sair da Mesa</button>
+        </header>
+
+        <div class="table-area">
+            <!-- Adversário Topo -->
+            <div class="opponent opponent-top" id="opp-top">
+                <div class="avatar">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Avatar">
+                </div>
+                <div class="info">
+                    <span class="name">Carlos</span>
+                    <span class="piece-count">7 Peças</span>
+                </div>
+            </div>
+
+            <!-- Adversário Esquerda -->
+            <div class="opponent opponent-left" id="opp-left">
+                <div class="avatar">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Ana" alt="Avatar">
+                </div>
+                <div class="info">
+                    <span class="name">Ana</span>
+                    <span class="piece-count">5 Peças</span>
+                </div>
+            </div>
+
+            <!-- Adversário Direita -->
+            <div class="opponent opponent-right" id="opp-right">
+                <div class="avatar">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Beto" alt="Avatar">
+                </div>
+                <div class="info">
+                    <span class="name">Beto</span>
+                    <span class="piece-count">6 Peças</span>
+                </div>
+            </div>
+
+            <!-- Tabuleiro Central -->
+            <div class="board" id="game-board">
+                <!-- Peças na mesa serão renderizadas aqui -->
+                <div class="domino-piece on-board double" style="transform: translate(0, 0);">
+                    <div class="half">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="half">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                </div>
+
+                <div class="domino-piece on-board horizontal" style="transform: translate(60px, 0);">
+                    <div class="half">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="half">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dorminhoco (Monte) -->
+            <div class="boneyard" id="boneyard" onclick="drawPiece()">
+                <div class="domino-piece hidden"></div>
+                <span>Comprar</span>
+            </div>
+        </div>
+
+        <!-- Mão do Jogador Atual -->
+        <div class="player-hand-area">
+            <div class="turn-indicator active" id="my-turn-indicator">Sua Vez!</div>
+            <div class="controls">
+                <button class="btn btn-warning" id="pass-turn-btn" disabled>Passar a Vez</button>
+            </div>
+            <div class="player-hand" id="my-hand">
+                <!-- Peças da mão -->
+                <div class="domino-piece playable" draggable="true">
+                    <div class="half">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="half">
+                        <span class="dot"></span><span class="dot"></span>
+                    </div>
+                </div>
+                <div class="domino-piece" draggable="true">
+                    <div class="half">
+                        <span class="dot"></span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="half">
+                    </div>
+                </div>
+                <div class="domino-piece playable" draggable="true">
+                    <div class="half">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="half">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

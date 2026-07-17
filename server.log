@@ -1,0 +1,25 @@
+[Fri Jul 17 23:45:24 2026] PHP 8.3.6 Development Server (http://localhost:8000) started
+[Fri Jul 17 23:45:34 2026] [::1]:50284 Accepted
+[Fri Jul 17 23:45:34 2026] [::1]:50284 [200]: GET /lobby.html
+[Fri Jul 17 23:45:34 2026] [::1]:50284 Closing
+[Fri Jul 17 23:46:23 2026] [::1]:39750 Accepted
+[Fri Jul 17 23:46:23 2026] [::1]:39750 [200]: GET /lobby.html
+[Fri Jul 17 23:46:23 2026] [::1]:39750 Closing
+[Fri Jul 17 23:46:23 2026] [::1]:39760 Accepted
+[Fri Jul 17 23:46:23 2026] [::1]:39770 Accepted
+[Fri Jul 17 23:46:23 2026] [::1]:39760 [200]: GET /css/style.css
+[Fri Jul 17 23:46:23 2026] [::1]:39770 [404]: GET /js/lobby.js - No such file or directory
+[Fri Jul 17 23:46:23 2026] [::1]:39760 Closing
+[Fri Jul 17 23:46:23 2026] [::1]:39770 Closing
+[Fri Jul 17 23:46:25 2026] [::1]:39772 Accepted
+[Fri Jul 17 23:46:25 2026] [::1]:39772 [200]: GET /game.html?room=1
+[Fri Jul 17 23:46:25 2026] [::1]:39772 Closing
+[Fri Jul 17 23:46:25 2026] [::1]:39786 Accepted
+[Fri Jul 17 23:46:25 2026] [::1]:39798 Accepted
+[Fri Jul 17 23:46:25 2026] [::1]:39802 Accepted
+[Fri Jul 17 23:46:25 2026] [::1]:39786 [200]: GET /css/style.css
+[Fri Jul 17 23:46:25 2026] [::1]:39798 [200]: GET /css/game.css
+[Fri Jul 17 23:46:25 2026] [::1]:39802 [404]: GET /js/game.js - No such file or directory
+[Fri Jul 17 23:46:25 2026] [::1]:39802 Closing
+[Fri Jul 17 23:46:25 2026] [::1]:39786 Closing
+[Fri Jul 17 23:46:25 2026] [::1]:39798 Closing

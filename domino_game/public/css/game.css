@@ -1,0 +1,247 @@
+/* Layout Principal do Jogo */
+body {
+    overflow: hidden; /* Evitar scroll durante o jogo */
+}
+
+.game-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #1a252f;
+    z-index: 10;
+}
+
+/* Área da Mesa (Wood Table) */
+.table-area {
+    flex: 1;
+    background: radial-gradient(circle, var(--wood-bg) 40%, #5c3a21 100%);
+    position: relative;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Adversários - Posicionamento Absoluto */
+.opponent {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0,0,0,0.4);
+    padding: 10px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Destaque de turno */
+.opponent.active, .player-hand-area.active {
+    box-shadow: 0 0 15px var(--warning-color);
+}
+
+.opponent-top { top: 20px; left: 50%; transform: translateX(-50%); }
+.opponent-left { left: 20px; top: 50%; transform: translateY(-50%); }
+.opponent-right { right: 20px; top: 50%; transform: translateY(-50%); }
+
+.avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid var(--text-color);
+}
+
+.info {
+    text-align: center;
+    margin-top: 5px;
+}
+.info .name { display: block; font-weight: bold; }
+.info .piece-count { font-size: 0.8em; color: #ccc; }
+
+/* Tabuleiro Central (onde as peças são jogadas) */
+.board {
+    position: relative;
+    width: 60%;
+    height: 60%;
+    /* Opcional: background para visualizar a área do tabuleiro */
+    /* background-color: rgba(255,255,255,0.05); */
+}
+
+/* Monte / Dorminhoco */
+.boneyard {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+.boneyard:hover {
+    transform: scale(1.05);
+}
+.boneyard span { margin-top: 5px; font-size: 0.9em; font-weight: bold;}
+
+/* Mão do Jogador */
+.player-hand-area {
+    height: 150px;
+    background-color: #1a252f;
+    border-top: 5px solid #000;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.turn-indicator {
+    position: absolute;
+    top: -30px;
+    background-color: var(--warning-color);
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-weight: bold;
+    display: none;
+}
+.turn-indicator.active { display: block; }
+
+.controls {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.player-hand {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+
+/* --- Estilização da Peça de Dominó --- */
+.domino-piece {
+    width: 40px;
+    height: 80px;
+    background-color: var(--bone-color);
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5), inset -2px -2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    position: relative; /* Para as peças na mesa */
+    cursor: grab;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.domino-piece:active { cursor: grabbing; }
+
+/* Peça jogável (brilho) */
+.domino-piece.playable {
+    box-shadow: 0 0 10px var(--success-color), 2px 2px 5px rgba(0,0,0,0.5);
+    transform: translateY(-10px);
+}
+.domino-piece.playable:hover {
+    transform: translateY(-15px);
+}
+
+/* Peça oculta (costas) */
+.domino-piece.hidden {
+    background-color: #333;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px);
+}
+
+.half {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 4px;
+    gap: 2px;
+}
+
+.divider {
+    height: 2px;
+    background-color: #333;
+    margin: 0 4px;
+}
+
+/* Pontos (Dots) */
+.dot {
+    background-color: var(--dot-color);
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    place-self: center;
+}
+
+/* Lógica de grid para as faces (simplificada aqui para exemplo visual) */
+/* Face 1: centro */
+.half .dot:only-child { grid-area: 2 / 2; }
+
+/* Face 2: diagonal */
+.half .dot:nth-child(1):nth-last-child(2) { grid-area: 1 / 1; }
+.half .dot:nth-child(2):nth-last-child(1) { grid-area: 3 / 3; }
+
+/* Face 3: diagonal + centro */
+.half .dot:nth-child(1):nth-last-child(3) { grid-area: 1 / 1; }
+.half .dot:nth-child(2):nth-last-child(2) { grid-area: 2 / 2; }
+.half .dot:nth-child(3):nth-last-child(1) { grid-area: 3 / 3; }
+
+/* Face 4: quatro cantos */
+.half .dot:nth-child(1):nth-last-child(4) { grid-area: 1 / 1; }
+.half .dot:nth-child(2):nth-last-child(3) { grid-area: 1 / 3; }
+.half .dot:nth-child(3):nth-last-child(2) { grid-area: 3 / 1; }
+.half .dot:nth-child(4):nth-last-child(1) { grid-area: 3 / 3; }
+
+/* Face 5: quatro cantos + centro */
+.half .dot:nth-child(1):nth-last-child(5) { grid-area: 1 / 1; }
+.half .dot:nth-child(2):nth-last-child(4) { grid-area: 1 / 3; }
+.half .dot:nth-child(3):nth-last-child(3) { grid-area: 2 / 2; }
+.half .dot:nth-child(4):nth-last-child(2) { grid-area: 3 / 1; }
+.half .dot:nth-child(5):nth-last-child(1) { grid-area: 3 / 3; }
+
+/* Face 6: duas colunas */
+.half .dot:nth-child(1):nth-last-child(6) { grid-area: 1 / 1; }
+.half .dot:nth-child(2):nth-last-child(5) { grid-area: 2 / 1; }
+.half .dot:nth-child(3):nth-last-child(4) { grid-area: 3 / 1; }
+.half .dot:nth-child(4):nth-last-child(3) { grid-area: 1 / 3; }
+.half .dot:nth-child(5):nth-last-child(2) { grid-area: 2 / 3; }
+.half .dot:nth-child(6):nth-last-child(1) { grid-area: 3 / 3; }
+
+
+/* Peças na Mesa */
+.on-board {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: default;
+    /* Transições para quando a peça é colocada */
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.on-board:active { cursor: default; }
+.on-board.playable { box-shadow: 2px 2px 5px rgba(0,0,0,0.5); transform: none; }
+.on-board.playable:hover { transform: none; }
+
+/* Rotações */
+.on-board.horizontal {
+    transform: rotate(90deg);
+}
+
+/* Peças Duplas geralmente ficam cruzadas (verticais no meio de uma linha horizontal) */
+.on-board.double {
+    transform: rotate(0deg);
+}
