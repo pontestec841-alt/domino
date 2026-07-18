@@ -1,25 +1,55 @@
-[Fri Jul 17 23:45:24 2026] PHP 8.3.6 Development Server (http://localhost:8000) started
-[Fri Jul 17 23:45:34 2026] [::1]:50284 Accepted
-[Fri Jul 17 23:45:34 2026] [::1]:50284 [200]: GET /lobby.html
-[Fri Jul 17 23:45:34 2026] [::1]:50284 Closing
-[Fri Jul 17 23:46:23 2026] [::1]:39750 Accepted
-[Fri Jul 17 23:46:23 2026] [::1]:39750 [200]: GET /lobby.html
-[Fri Jul 17 23:46:23 2026] [::1]:39750 Closing
-[Fri Jul 17 23:46:23 2026] [::1]:39760 Accepted
-[Fri Jul 17 23:46:23 2026] [::1]:39770 Accepted
-[Fri Jul 17 23:46:23 2026] [::1]:39760 [200]: GET /css/style.css
-[Fri Jul 17 23:46:23 2026] [::1]:39770 [404]: GET /js/lobby.js - No such file or directory
-[Fri Jul 17 23:46:23 2026] [::1]:39760 Closing
-[Fri Jul 17 23:46:23 2026] [::1]:39770 Closing
-[Fri Jul 17 23:46:25 2026] [::1]:39772 Accepted
-[Fri Jul 17 23:46:25 2026] [::1]:39772 [200]: GET /game.html?room=1
-[Fri Jul 17 23:46:25 2026] [::1]:39772 Closing
-[Fri Jul 17 23:46:25 2026] [::1]:39786 Accepted
-[Fri Jul 17 23:46:25 2026] [::1]:39798 Accepted
-[Fri Jul 17 23:46:25 2026] [::1]:39802 Accepted
-[Fri Jul 17 23:46:25 2026] [::1]:39786 [200]: GET /css/style.css
-[Fri Jul 17 23:46:25 2026] [::1]:39798 [200]: GET /css/game.css
-[Fri Jul 17 23:46:25 2026] [::1]:39802 [404]: GET /js/game.js - No such file or directory
-[Fri Jul 17 23:46:25 2026] [::1]:39802 Closing
-[Fri Jul 17 23:46:25 2026] [::1]:39786 Closing
-[Fri Jul 17 23:46:25 2026] [::1]:39798 Closing
+[Sat Jul 18 00:09:39 2026] PHP 8.3.6 Development Server (http://localhost:8000) started
+[Sat Jul 18 00:10:01 2026] [::1]:48664 Accepted
+[Sat Jul 18 00:10:01 2026] [::1]:48664 [200]: GET /login.php
+[Sat Jul 18 00:10:01 2026] [::1]:48664 Closing
+[Sat Jul 18 00:12:16 2026] [::1]:57540 Accepted
+[Sat Jul 18 00:12:16 2026] [::1]:57540 [200]: GET /login.php
+[Sat Jul 18 00:12:16 2026] [::1]:57540 Closing
+[Sat Jul 18 00:12:38 2026] [::1]:36100 Accepted
+[Sat Jul 18 00:12:38 2026] [::1]:36100 [200]: GET /login.php
+[Sat Jul 18 00:12:38 2026] [::1]:36100 Closing
+[Sat Jul 18 00:13:04 2026] [::1]:57884 Accepted
+[Sat Jul 18 00:13:04 2026] [::1]:57884 [200]: GET /register.php
+[Sat Jul 18 00:13:04 2026] [::1]:57884 Closing
+[Sat Jul 18 00:13:04 2026] [::1]:57888 Accepted
+[Sat Jul 18 00:13:04 2026] [::1]:57888 [200]: GET /css/style.css
+[Sat Jul 18 00:13:04 2026] [::1]:57888 Closing
+[Sat Jul 18 00:13:05 2026] [::1]:57890 Accepted
+[Sat Jul 18 00:13:05 2026] [::1]:57890 [200]: POST /register.php
+[Sat Jul 18 00:13:05 2026] [::1]:57890 Closing
+[Sat Jul 18 00:13:05 2026] [::1]:57900 Accepted
+[Sat Jul 18 00:13:05 2026] [::1]:57900 [200]: GET /css/style.css
+[Sat Jul 18 00:13:05 2026] [::1]:57900 Closing
+[Sat Jul 18 00:13:06 2026] [::1]:57912 Accepted
+[Sat Jul 18 00:13:06 2026] [::1]:57912 [200]: GET /login.php
+[Sat Jul 18 00:13:06 2026] [::1]:57912 Closing
+[Sat Jul 18 00:13:06 2026] [::1]:57914 Accepted
+[Sat Jul 18 00:13:06 2026] [::1]:57914 [200]: GET /css/style.css
+[Sat Jul 18 00:13:06 2026] [::1]:57914 Closing
+[Sat Jul 18 00:13:07 2026] [::1]:46846 Accepted
+[Sat Jul 18 00:13:07 2026] [::1]:46846 [302]: POST /login.php
+[Sat Jul 18 00:13:07 2026] [::1]:46846 Closing
+[Sat Jul 18 00:13:07 2026] [::1]:46858 Accepted
+[Sat Jul 18 00:13:07 2026] [::1]:46858 [200]: GET /lobby.php
+[Sat Jul 18 00:13:07 2026] [::1]:46858 Closing
+[Sat Jul 18 00:13:07 2026] [::1]:46864 Accepted
+[Sat Jul 18 00:13:07 2026] [::1]:46864 [200]: GET /css/style.css
+[Sat Jul 18 00:13:07 2026] [::1]:46864 Closing
+[Sat Jul 18 00:13:08 2026] [::1]:46874 Accepted
+[Sat Jul 18 00:13:08 2026] [::1]:46874 [302]: POST /lobby.php
+[Sat Jul 18 00:13:08 2026] [::1]:46874 Closing
+[Sat Jul 18 00:13:08 2026] [::1]:46884 Accepted
+[Sat Jul 18 00:13:08 2026] [::1]:46884 [200]: GET /game.php?room=1
+[Sat Jul 18 00:13:08 2026] [::1]:46884 Closing
+[Sat Jul 18 00:13:08 2026] [::1]:46896 Accepted
+[Sat Jul 18 00:13:08 2026] [::1]:46910 Accepted
+[Sat Jul 18 00:13:08 2026] [::1]:46896 [200]: GET /css/game.css
+[Sat Jul 18 00:13:08 2026] [::1]:46910 [200]: GET /css/style.css
+[Sat Jul 18 00:13:08 2026] [::1]:46896 Closing
+[Sat Jul 18 00:13:08 2026] [::1]:46910 Closing
+[Sat Jul 18 00:13:10 2026] [::1]:46926 Accepted
+[Sat Jul 18 00:13:10 2026] [::1]:46926 [200]: GET /lobby.php
+[Sat Jul 18 00:13:10 2026] [::1]:46926 Closing
+[Sat Jul 18 00:13:10 2026] [::1]:46932 Accepted
+[Sat Jul 18 00:13:10 2026] [::1]:46932 [200]: GET /css/style.css
+[Sat Jul 18 00:13:10 2026] [::1]:46932 Closing
